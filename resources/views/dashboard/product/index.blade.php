@@ -25,10 +25,16 @@
                     <th scope="col">#</th>
                     <th scope="col">@lang('site.code')</th>
                     <th scope="col">@lang('site.name')</th>
-                    <th scope="col">@lang('itemContent')</th>
-                    <th scope="col">@lang('unititem')</th>
-                    <th scope="col">@lang('categorytype')</th>
 
+                    <th scope="col">@lang('site.unititem')</th>
+                    <th scope="col">@lang('site.subsetunititem')</th>
+
+                    <th scope="col">@lang('site.itemContent')</th>
+                    <th scope="col">@lang('site.categorytype')</th>
+
+                    <th scope="col">@lang('site.itemrequest')</th>
+                    <th scope="col">@lang('site.itemmax')</th>
+                    <th scope="col">@lang('site.itememin')</th>
                     <th scope="col">@lang('site.delete')</th>
                 </tr>
                 </thead>
@@ -39,15 +45,23 @@
                         <td>{{$product->productcode}}</td>
 
                         @if(LaravelLocalization::getCurrentLocale() == 'ar')
-                            <td>{{$unit->name_ar}}</td>
-                            <td>{{$product->Itemunit()->itemunit_ar}}</td>
-                            <td>{{$product->category_type()->categorytype_ar}}</td>
+                            <td>{{$product->name_ar}}</td>
+                            <td>{{$product->Itemunit->itemunit_ar}}</td>
+                            <td>{{$product->subsetitem}}</td>
+                            <td>{{$product->itemContent}}</td>
+                            <td>{{$product->category_type->categorytype_ar}}</td>
                         @else
-                            <td>{{$unit->name_en}}</td>
-                            <td>{{$product->Itemunit()->itemunit_en}}</td>
-                            <td>{{$product->category_type()->categorytype_en}}</td>
+                            <td>{{$product->name_en}}</td>
+                            <td>{{$product->Itemunit->itemunit_en}}</td>
+                            <td>{{$product->subsetitem}}</td>
+                            <td>{{$product->itemContent}}</td>
+                            <td>{{$product->category_type->categorytype_en}}</td>
                         @endif
-                        <td>{{$product->itemContent}}</td>
+
+                        <td>{{$product->itemrequest}}</td>
+                        <td>{{$product->itemmax}}</td>
+                        <td>{{$product->itemmin}}</td>
+
 
                         <td>
                             <form action="{{route('dashboard.products.destroy',$product->id)}}" method="post" style="display: inline-block">

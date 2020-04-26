@@ -18,6 +18,7 @@ class productController extends Controller
     public function index()
     {
        $products = Product::paginate(10);
+
         return view('dashboard.product.index',compact('products'));
     }
 
@@ -47,10 +48,15 @@ class productController extends Controller
             'name_ar' => 'required',
             'itemunitId' => 'required',
             'itemContent' => 'required',
+
+            'subsetitem'=>'required',
             'categoryId' => 'required',
+            'itemrequest'=>'required',
+            'itemmax'=>'required',
+            'itemmin'=>'required',
         ]);
 
-        Categorytype::create($validatedData);
+        Product::create($validatedData);
 
         return redirect()->route('dashboard.products.index');
     }

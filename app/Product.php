@@ -6,14 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-protected $fillable = ['productcode','name_en','name_ar','itemunitId','itemContent','categoryId'];
+protected $fillable = ['productcode','name_en','name_ar','itemunitId','itemContent',
+      'categoryId','subsetitem','itemrequest','itemmax','itemmin'];
 
 
 public function Itemunit(){
-    return $this->hasOne(Itemunit::class,'itemunitId','id');
+    return $this->belongsTo(Itemunit::class,'itemunitId','id');
 }
 
     public function category_type(){
-        return $this->hasOne(Categorytype::class,'categoryId','id');
+        return $this->belongsTo(Categorytype::class,'categoryId','id');
     }
 }

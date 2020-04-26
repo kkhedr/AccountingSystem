@@ -18,9 +18,10 @@ return[
 
     'code'=>'product code',
     'itemContent'=> 'Unit content',
-    'unititem'=>'product Unit',
+    'unititem'=>'product main Unit',
     'categorytype'=>'Category Type',
     'Productadd'=>'Product add',
     'Productshow'=>'Product show',
+    'unititemsubset'=>'Subclass unit',
 
 ];

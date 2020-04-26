@@ -21,9 +21,14 @@ class CreateProductsTable extends Migration
                 $table->string('name_'.$localeCode);
             }
             $table->unsignedBigInteger('itemunitId');
+            $table->string('subsetitem');
             $table->string('itemContent');
             $table->unsignedBigInteger('categoryId');
             $table->timestamps();
+
+            $table->bigInteger('itemrequest');
+            $table->bigInteger('itemmax');
+            $table->bigInteger('itemmin');
 
             $table->foreign('itemunitId')->references('id')->on('itemunits')->onDelete('cascade');
             $table->foreign('categoryId')->references('id')->on('categorytypes')->onDelete('cascade');
