@@ -20,8 +20,8 @@ Route::group(
 //            //products routes
             Route::resource('products','productController');
 //
-//            //Client routes
-//            Route::resource('clients','ClientController');
+             //item title
+            Route::resource('itemtitle','itemtitleController');
         });
     });
 

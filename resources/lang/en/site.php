@@ -23,5 +23,14 @@ return[
     'Productadd'=>'Product add',
     'Productshow'=>'Product show',
     'unititemsubset'=>'Subclass unit',
+    'subsetitem-one'=>'Item Content 1',
+    'subsetitem-two'=>'Item Content 2',
+    'itemtitle'=>'Item Title',
+    'itemtitleadd'=>'Add Item title',
+    'itemtitleshow'=> 'Show Item Title',
+    'itemTitle'=>'Item Category',
+    'search'=>'Search'
+
+
 
 ];

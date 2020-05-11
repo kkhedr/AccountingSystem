@@ -23,12 +23,21 @@ return[
     'itemrequest'=> 'حد الطلب',
     'itemmax'=>'حد الأدني',
     'itememin'=>'حد الاقصي',
-
+    'subsetitem-one'=>'وحدة الصنف الفرعية 1',
+    'subsetitem-two'=>'وحدة الصنف الفرعية 2',
+     'itemContentOne'=> 'محتوي الوحدة 1',
+    'itemContentTwo'=> 'محتوي الوحدة 2',
     'categoryadd'=>'أضافة نوع صنف',
     'categoryindex'=>'عرض انواع الاصناف',
     'Categorytype'=>'توع الصنف',
-
+    'itemtitle_ar'=>'مجموعة أصناف بالعربي',
+    'itemtitle_en'=>'مجموعة أصناف بالأنجليزي',
+    'itemtitle' => 'مجموعة اصناف ',
     'read' => 'عرض',
+    'itemtitleadd'=> 'أضافة مجموعو اصناف',
+    'itemtitleshow' => 'عرض مجاميع الأصناف',
+    'itemTitle'=>"مجموعة الصنف",
+    'search'=>'بحث',
 
     'edit' => 'تعديل',
     'update' => 'تعديل',

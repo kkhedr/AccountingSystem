@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Categorytype;
 use App\Http\Controllers\Controller;
+use App\ItemTitle;
 use App\Itemunit;
 use App\Product;
 use Illuminate\Http\Request;
@@ -15,11 +16,24 @@ class productController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-       $products = Product::paginate(10);
+        $products = Product::when($request->search,function($q) use ($request){
+            return $q->whereTranslationLike('name','%'.$request->search.'%');
 
-        return view('dashboard.product.index',compact('products'));
+        })->latest()->paginate(5);
+
+        if($products){
+            return view('dashboard.product.index',compact('products'));
+        }else {
+            $products = Product::when($request->search,function($q) use ($request){
+                return $q->where('productcode','=',$request->search);
+
+            })->latest()->paginate(5);
+            return view('dashboard.product.index',compact('products'));
+        }
+
+
     }
 
     /**
@@ -31,7 +45,8 @@ class productController extends Controller
     {
         $itemunits = Itemunit::all();
         $categories= Categorytype::all();
-        return view('dashboard.product.create',compact('itemunits','categories'));
+        $itemstitle = ItemTitle::all();
+        return view('dashboard.product.create',compact('itemunits','categories','itemstitle'));
     }
 
     /**
@@ -48,8 +63,13 @@ class productController extends Controller
             'name_ar' => 'required',
             'itemunitId' => 'required',
             'itemContent' => 'required',
+            'subsetitem-one'=>'required',
 
-            'subsetitem'=>'required',
+            'itemContentTwo'=>'required',
+            'itemContentOne'=>'required',
+            'subsetitem-two'=>'required',
+
+            'itemtitle_id'=>'required',
             'categoryId' => 'required',
             'itemrequest'=>'required',
             'itemmax'=>'required',

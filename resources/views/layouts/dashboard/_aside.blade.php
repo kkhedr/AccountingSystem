@@ -29,6 +29,11 @@
             <li><a href="{{ route('dashboard.products.index') }}"><i class="fa fa-th"></i><span>@lang('site.Productshow')</span></a></li>
 
 
+            <li><a href="{{ route('dashboard.itemtitle.create') }}"><i class="fa fa-th"></i><span>@lang('site.itemtitleadd')</span></a></li>
+
+            <li><a href="{{ route('dashboard.itemtitle.index') }}"><i class="fa fa-th"></i><span>@lang('site.itemtitleshow')</span></a></li>
+
+
             {{--@if (auth()->user()->hasPermission('read_categories'))--}}
                 {{--<li><a href="{{ route('dashboard.categories.index') }}"><i class="fa fa-th"></i><span>@lang('site.categories')</span></a></li>--}}
             {{--@endif--}}

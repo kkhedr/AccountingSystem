@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
 protected $fillable = ['productcode','name_en','name_ar','itemunitId','itemContent',
-      'categoryId','subsetitem','itemrequest','itemmax','itemmin'];
+      'categoryId','itemrequest','itemmax','itemmin','subsetitem-one','subsetitem-two','itemContentOne','itemContentTwo','itemtitle_id'];
 
 
 public function Itemunit(){
@@ -17,4 +17,10 @@ public function Itemunit(){
     public function category_type(){
         return $this->belongsTo(Categorytype::class,'categoryId','id');
     }
+
+    public function ItemTitle(){
+    return $this->belongsTo(ItemTitle::class,'itemtitle_id','id');
+    }
+
+
 }
